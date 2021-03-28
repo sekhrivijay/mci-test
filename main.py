@@ -20,7 +20,7 @@ def hello_world():
 @app.route('/callme', methods=['GET'])
 def callme():
     print('Hello world')
-    return requestHelper.getData(requestHelper.getNewSession(), BASE_URL + '/ping').json()
+    return requestHelper.getData(requestHelper.getNewBasicSession(), BASE_URL + '/ping').json()
     #return 'Hello world'
 
 
