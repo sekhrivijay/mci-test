@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: myfrontend
-        image: sekhrivijay/mci-test:v2
+        image: sekhrivijay/mci-test:v3
         ports:
         - containerPort: 8080
 
