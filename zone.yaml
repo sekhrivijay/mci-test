@@ -18,6 +18,14 @@ spec:
         image: gcr.io/google-samples/zone-printer:0.2
         ports:
         - containerPort: 8080
+        resources:
+          requests:
+            memory: "0.2Gi"
+            cpu: "0.2"
+          limits:
+            memory: "0.2Gi"
+            cpu: "0.3"
+
 
 ---
 apiVersion: v1
