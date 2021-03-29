@@ -10,6 +10,7 @@ RUN pip3 install --upgrade google-cloud-error-reporting
 RUN pip3 install --upgrade google-cloud-secret-manager
 RUN pip3 install --upgrade google-cloud-logging
 RUN pip3 install Flask gunicorn
+RUN apt-get update && apt-get install -y curl dnsutils
 ENV PYTHONUNBUFFERED True
 
 

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mci-frontend
+  labels:
+    app: mci-frontend
+spec:
+  selector:
+    matchLabels:
+      app: mci-frontend
+  template:
+    metadata:
+      labels:
+        app: mci-frontend
+    spec:
+      containers:
+      - name: myfrontend
+        image: sekhrivijay/mci-test:v2
+        ports:
+        - containerPort: 8080
+
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mci-frontend
+spec:
+  maxReplicas: 10
+  minReplicas: 3
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: mci-frontend
+  targetCPUUtilizationPercentage: 50
