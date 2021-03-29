@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 
 
-@app.route('/health')
+@app.route('/')
 def hello_world():
     return 'Healthy'
 
