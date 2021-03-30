@@ -44,7 +44,7 @@ spec:
   type: ClusterIP
 
 ---
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   name: zone-ingress
@@ -55,4 +55,9 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: zone-ingress
-  targetCPUUtilizationPercentage: 20
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 15
+

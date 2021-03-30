@@ -27,7 +27,7 @@ spec:
             cpu: "0.4"
 
 ---
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   name: mci-frontend
@@ -38,4 +38,9 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: mci-frontend
-  targetCPUUtilizationPercentage: 20
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 20
+

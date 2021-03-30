@@ -65,8 +65,13 @@ gcloud alpha container hub multi-cluster-services describe
 
 
 #To change context 
-gcloud container clusters get-credentials us-central --region us-central1 --project sekhrivijaytest4
-gcloud container clusters get-credentials us-west --region us-west1 --project sekhrivijaytest4
+# gcloud container clusters get-credentials us-central --region us-central1 --project sekhrivijaytest4
+# gcloud container clusters get-credentials us-west --region us-west1 --project sekhrivijaytest4
+
+
+kubectl config use-context gke_sekhrivijaytest4_us-central1_us-central
+kubectl config use-context gke_sekhrivijaytest4_us-west1_us-west
+
 
 
 
