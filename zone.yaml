@@ -55,4 +55,4 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: zone-ingress
-  targetCPUUtilizationPercentage: 50
+  targetCPUUtilizationPercentage: 20
